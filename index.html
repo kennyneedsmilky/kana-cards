@@ -1,0 +1,206 @@
+<!-- ケンミル --> <!-- 神様最高 -->
+<!DOCTYPE html>
+<html lang="en">
+    <!-- メタ情報 -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+        <!-- CSSファイルのリンクです。内部の場合は <style></style> に置き換えます。 -->
+        <link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/cur-quiz.css">
+        <!-- JSファイルのリンク。内部の場合はv<script></script> に置き換えます。 -->
+        <script defer src="assets/js/kanaList.js"></script>
+        <script defer src="assets/js/quizList.js"></script>
+        <script defer src="assets/js/main.js"></script>
+        <script defer src="assets/js/curQuiz.js"></script>
+        <script defer src="assets/js/notes.js"></script>
+        <!-- ファビコン -->
+        <link rel="shortcut icon" href="#">
+        <title>かなカード</title>
+    </head>
+    <!-- アプリのマークアップ -->
+    <body>
+        <!-- Wrong Screen -->
+        <div class="wrong-screen">
+            <h2>Please put device in portrait mode.</h2>
+            <h2>デバイスをポートレートモードにしてください。</h2>
+        </div>
+        <!-- メイン -->
+        <main>
+            <!-- Start -->
+            <section class="page page--white" data-page="start">
+                <button class="menu__btn --about" data-target="about">About</button>
+                <h2 class="ver-label">Ver: 1.5</h2>
+                <h2 class="title puff-in-center">かなカード</h2>
+                <p class="title puff-in-center">Kana Cards</p>
+                <button class="btn--normal start-btn">START</button>  
+            </section>
+            
+            <!-- Learn -->
+            <section class="page page--white slide-in-blurred-bottom hidden" data-page="learn">
+                <h2 class="page__title">Learn まなぶ</h2>
+                <div class="sushi-wrapper--stick">
+                    <h2 class="kana-list-label">Hiragana List</h2>
+                    <p>Tap on a card to hear the sound.</p>
+                    <!-- Kana Switch -->
+                    <div class="kana-switch">
+                        <button class="kana-switch__btn active" data-target="hiragana">ひらがな</button>
+                        <button class="kana-switch__btn" data-target="katakana">カタカナ</button>
+                    </div>
+                    <!-- Kana Box Hiragana -->
+                    <div class="kana-box" data-box-id="hiragana"></div>
+                    <!-- Kana Box Katakana -->
+                    <div class="kana-box hidden" data-box-id="katakana"></div>
+                </div>
+            </section>
+
+            <!-- Select Quiz -->
+            <section class="page page--white slide-in-blurred-bottom hidden" data-page="quiz">
+                <h2 class="page__title">Quiz クイズ</h2>
+                <div class="sushi-wrapper">
+                    <h2>Tap on a card.</h2>
+                    <div class="quiz-box"></div>
+                </div>
+            </section>
+
+            <!-- Current Quiz -->
+            <section class="page page--purple slide-in-blurred-bottom hidden" data-page="current-quiz">
+
+                <!-- Quiz Question -->
+                <div class="cur-quiz-question">
+                    <h2>Question <span class="cur-quiz-question__now-label"></span>/<span class="cur-quiz-question__max-label"></span></h2>
+                    <h2>Score: <span class="cur-quiz-question__score-label"></span>%</h2>
+                </div>
+                
+                <!-- Kana Ball -->
+                <div class="kana-ball lower shadow-drop-2-center vibrate-1">
+                    <h2 class="kana-ball__label"></h2>
+                </div>
+
+                <!-- Answer Ball Area -->
+                <div class="answer-ball-area">
+                    <!-- Answer Ball-->
+                    <button class="answer-ball higher">
+                        <h2 class="answer-ball__label avoid-clicks"></h2>
+                    </button>
+                    <!-- Answer Ball-->
+                    <button class="answer-ball">
+                        <h2 class="answer-ball__label avoid-clicks"></h2>
+                    </button>
+                    <!-- Answer Ball-->
+                    <button class="answer-ball higher">
+                        <h2 class="answer-ball__label avoid-clicks"></h2>
+                    </button>
+                </div>
+
+            </section>
+
+            <!-- Status -->
+            <section class="page page--white slide-in-blurred-bottom hidden" data-page="status">
+                <h2 class="page__title">Status ステータス</h2>
+                <!-- It wraps the page content. -->
+                <div class="sushi-wrapper">
+                    <!-- Kana Mastery Box -->
+                    <div class="">
+                        <h3 class="kana-mastery__title">Kana Mastery</h3>
+                        <div class="kana-mastery">
+                            <div class="kana-mastery__txt">
+                                <p>Hiragana Mastered: <span class="hiragana-mastered-label">0</span>/<span class="hiragana-max-label">0</span></p>
+                                <p>Katakana Mastered: <span class="katakana-mastered-label">0</span>/<span class="katakana-max-label">0</span></p>
+                            </div>
+                            <!-- Kana Mastery Bar -->
+                            <div class="kana-mastery__bar">
+                                <div class="kana-mastery__bar-item" style="--mastery: 0%"></div>
+                                <div class="kana-mastery__bar-item" style="--mastery: 0%"></div>
+                            </div>
+                        </div>   
+                    </div>
+                    <!-- Hiragana Part -->
+                    <div class="kana-label">
+                        Hiragana ひらがな
+                        <button class="status-check-btn" data-check-id="hiragana">Check</button>
+                    </div>
+                    <div class="kana-label --katakana-label">
+                        Katakana カタカナ
+                        <button class="status-check-btn" data-check-id="katakana">Check</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About -->
+            <section class="page page-round page--white slide-in-blurred-bottom hidden" data-page="about">
+                <button class="delete-btn">DELETE DATA</button>
+                <h2 class="page__title">かなカードについて</h2>
+                <div class="sushi-wrapper">
+                    <div class="section-bubble">
+                        <h2>About Kana Cards</h2>
+                        <p>This app was made by me, Kenneth Fullbright. I know that hiragana and katakana may seem like a lot to learn. However, if you study everyday, you will master it very quickly. May God bless you!</p>
+                    </div>
+                    <div class="sushi-wrapper--h">
+                        <div class="section-bubble section-bubble--50">
+                            <h2>Special Message</h2>
+                            <p>あなたは　ユニークで　すばらしいですね！　にほんごを　べんきょう　してくれて　ありがとう！ これからも　がんばって！</p>
+                        </div>
+                        <div class="section-bubble section-bubble--50">
+                            <h2>Contact</h2>
+                            <p>email:  <a href="mailto:kennyfully88@gmail.com" target="_blank">kennyfully88@gmail.com</a></p>
+                            <p>github:  <a href="https://github.com/kennyneedsmilky" target="_blank">github.com/kennyneedsmilky</a></p>
+                        </div>
+                    </div>
+                    <div class="section-bubble">
+                        <p>Thank you very much for using this app! I put in a lot of work in order to make sure that it would be the kind of app that I would had wanted when I started learning Japanese a long time ago.</p>
+                    </div>
+                    <button class="menu__btn --back" data-target="start">Back<i class="fas fa-arrow-left"></i></button>
+                </div>
+            </section>
+            
+            <!-- Notes -->
+            <section class="page slide-in-blurred-bottom hidden" data-page="notes">
+                <div class="sushi-wrapper --notes">
+                    <h2 class="page__title">Notes ノート</h2>
+                </div>
+            </section>
+        </main>
+        
+        <!-- メニュー -->
+        <div class="menu hidden">
+            <div>
+                <button class="menu__btn" data-target="status">Status<i class="fas fa-cubes"></i></button>
+                <button class="menu__btn" data-target="notes">Notes<i class="fas fa-clipboard"></i></button>
+                <button class="menu__btn" data-target="learn">Learn<i class="fas fa-chalkboard-teacher"></i></button>
+                <button class="menu__btn" data-target="quiz">Quiz<i class="fas fa-user-edit"></i></button>
+                <button class="menu__btn--menu">Menu</button>
+            </div>
+        </div>
+
+
+
+
+        <!-- Modals -->
+
+        <!-- Hiragana Check Modal -->
+        <div class="modal hidden" data-check-id="hiragana">
+            <div class="modal__content">
+                <div class="modal__title-container">
+                    <h2 class="title">Hiragana</h2>
+                    <button class="modal__close-btn"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="hiragana-part"></div>
+            </div>        
+        </div>
+
+        <!-- Katakana Check Modal -->
+        <div class="modal hidden" data-check-id="katakana">
+            <div class="modal__content">
+                <div class="modal__title-container">
+                    <h2 class="title">Katakana</h2>
+                    <button class="modal__close-btn"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="katakana-part"></div>
+            </div>        
+        </div>
+
+    </body>
+</html>
+<!-- HTMLの終わり。 -->

@@ -1,0 +1,188 @@
+/* ケンミル */ /* 神様最高 */
+
+:disabled {
+  pointer-events: none;
+}
+
+.cur-quiz-question {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 1em;
+  border-radius: 1em;
+  background-color: black;
+  box-shadow: 5px 5px 5px #00000080;
+  color: #ffffff;
+}
+
+.kana-ball {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #000000b3;
+  box-shadow: 5px 5px 5px #00000080;
+  width: 4em;
+  height: 4em;
+  color: #ffffff;
+  font-size: 3em;
+}
+
+.answer-ball-area {
+  position: absolute;
+  bottom: 1em;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.answer-ball {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #000000b3;
+  box-shadow: 5px 5px 5px #00000080;
+  width: 6em;
+  height: 6em;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.answer-ball:active {
+  background-color: #000000;
+  box-shadow: 5px 5px 5px #00000080;
+  width: 7.5em;
+  height: 7.5em;
+  color: #add8e6;
+}
+
+.lower {
+  transform: translate(0, 2em);
+}
+
+.higher {
+  transform: translate(0, -2em);
+}
+
+.right:disabled {
+  background-color: #adff2f;
+}
+
+.wrong:disabled {
+  background-color: #ff0000;
+}
+
+/* Hover */
+@media (hover: hover) {
+  /* Answer Ball */
+  .answer-ball:hover {
+    background-color: #000000;
+    box-shadow: 5px 5px 5px #00000080;
+    width: 7.5em;
+    height: 7.5em;
+  }
+  .right,
+  .right:disabled:hover {
+    background-color: #adff2f;
+    color: #000000;
+  }
+
+  .wrong,
+  .wrong:disabled:hover {
+    background-color: #ff0000;
+  }
+}
+
+/* Animations */
+.shadow-drop-2-center {
+  -webkit-animation: shadow-drop-2-center 1s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate both;
+  animation: shadow-drop-2-center 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    infinite alternate both;
+}
+@-webkit-keyframes shadow-drop-2-center {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-box-shadow: 0 0 0 0 #00000000;
+    box-shadow: 0 0 0 0 #00000000;
+  }
+  100% {
+    -webkit-transform: translateZ(50px);
+    transform: translateZ(50px);
+    -webkit-box-shadow: 0 0 20px 0px #ffffffc7;
+    box-shadow: 0 0 20px 0px #ffffffb4;
+  }
+}
+@keyframes shadow-drop-2-center {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-box-shadow: 0 0 0 0 #00000000;
+    box-shadow: 0 0 0 0 #00000000;
+  }
+  100% {
+    -webkit-transform: translateZ(50px);
+    transform: translateZ(50px);
+    -webkit-box-shadow: 0 0 20px 0px #ffffffc7;
+    box-shadow: 0 0 20px 0px #ffffffb4;
+  }
+}
+
+.vibrate-1 {
+  -webkit-animation: vibrate-1 0.3s linear infinite both;
+  animation: vibrate-1 0.3s linear infinite both;
+}
+@-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
